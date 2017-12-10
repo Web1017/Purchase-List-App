@@ -1,5 +1,5 @@
 
-
+// use npm run package-win (to package the app )
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
@@ -7,7 +7,7 @@ const path = require('path');
 
 const { app, BrowserWindow, Menu, ipcMain} = electron;
 
-// Setting the Environment
+// Setting the Environment - Change to "Development" to have dev tools as well
 process.env.NODE_ENV = 'production';
 
 let mainWindow;
