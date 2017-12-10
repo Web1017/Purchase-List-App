@@ -1,0 +1,14 @@
+{
+  "name": "purchaselist",
+  "version": "1.0.0",
+  "description": "Purchase List App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Javid Niftaliyev",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.7.9"
+  }
+}
