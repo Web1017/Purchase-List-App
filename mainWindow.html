@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Purchase List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 </head>
 <body>
-    <h1>Purchase List</h1>
+    <nav> 
+       <div class="nav-wrapper">
+           <a class="brand-logo center"> Purchase List</a>
+       </div>
+    </nav>
+    <ul class="collection">
+
+    </ul>
+    <script>
+        
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        const ul = document.querySelector('ul');
+
+        // catching add item
+        ipcRenderer.on('item:add', function(e,item){
+            ul.className = 'collection';
+            //creating li and textNode and then adding textNode to the li
+            const li = document.createElement('li');
+            li.className = 'collection-item dismissable';
+            const itemText = document.createTextNode(item);
+            li.appendChild(itemText);
+            //adding ul to li
+            ul.appendChild(li);
+        });
+            //clear items
+            ipcRenderer.on('item:clear', function(){
+            ul.innerHTML = '';
+            ul.className = '';
+        });
+
+        // Remove item
+        ul.addEventListener('dblclick', removeitem);
+        function removeitem(e){
+            e.target.remove();
+            if (ul.children.length == 0){
+                ul.className = '';
+            }
+        }
+     </script>
 </body>
 </html>
