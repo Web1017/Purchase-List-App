@@ -6,15 +6,14 @@
   "scripts": {
     "start": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . ProductList-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"ProductList\"",    
+    "package-win": "electron-packager . ProductList-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"ProductList\"",
     "package-linux": "electron-packager . ProductList-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/icon.png --prune=true --out=release-builds"
   },
   "author": "Javid Niftaliyev",
   "license": "ISC",
-  "dependencies": {
-    "electron": "^1.7.9"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "electron": "^1.8.3",
     "electron-packager": "^10.1.0"
   }
 }
